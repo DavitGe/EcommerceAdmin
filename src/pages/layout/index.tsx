@@ -5,7 +5,7 @@ import Content from "./Content";
 
 const Layout = () => {
   return (
-    <Wrapper>
+    <Wrapper hasSider>
       <Sidebar />
       <Wrapper style={{ padding: 28 }}>
         <Header />

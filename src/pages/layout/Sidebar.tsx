@@ -1,36 +1,25 @@
-import { DashboardOutlined, HeatMapOutlined } from "@ant-design/icons";
+import { HeatMapOutlined } from "@ant-design/icons";
 import { Layout, theme, Typography, Menu } from "antd";
-import { ItemType, MenuItemType } from "antd/es/menu/hooks/useItems";
 import styled from "styled-components";
+import { sidebarData } from "./sidebar.data";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const { Sider: Wrapper } = Layout;
 const { Title } = Typography;
 const { useToken } = theme;
 
-const items: ItemType<MenuItemType>[] = [
-  {
-    label: "Dashboard",
-    icon: <DashboardOutlined />,
-    key: "dashboard",
-  },
-  {
-    label: "products",
-    icon: <DashboardOutlined />,
-    key: "products",
-  },
-  {
-    label: "categories",
-    icon: <DashboardOutlined />,
-    key: "categories",
-  },
-  {
-    label: "chat",
-    icon: <DashboardOutlined />,
-    key: "chat",
-  },
-];
 const Sidebar = () => {
+  const navigate = useNavigate();
   const { token } = useToken();
+  const location = useLocation();
+  const currentPage = location.pathname.split("/").filter(Boolean).pop();
+
+  function getPath(data: string[]) {
+    return data.reverse().reduce((sum, value) => {
+      return sum + "/" + value;
+    });
+  }
+
   return (
     <Wrapper
       width={252}
@@ -40,6 +29,7 @@ const Sidebar = () => {
         borderRight: `1px solid ${token.colorBorder}`,
         boxShadow: `-22px 10px 50px ${token.colorPrimary}`,
       }}
+      defaultCollapsed={false}
     >
       <LogoContainer>
         <HeatMapOutlined
@@ -49,7 +39,13 @@ const Sidebar = () => {
           Admink
         </Title>
       </LogoContainer>
-      <Menu items={items} />
+      <Menu
+        items={sidebarData}
+        defaultSelectedKeys={[currentPage || "Dashboard"]}
+        onSelect={(props) => {
+          navigate(getPath(props.keyPath));
+        }}
+      />
     </Wrapper>
   );
 };
