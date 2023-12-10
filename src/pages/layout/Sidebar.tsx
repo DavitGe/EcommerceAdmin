@@ -13,6 +13,21 @@ const items: ItemType<MenuItemType>[] = [
     icon: <DashboardOutlined />,
     key: "dashboard",
   },
+  {
+    label: "products",
+    icon: <DashboardOutlined />,
+    key: "products",
+  },
+  {
+    label: "categories",
+    icon: <DashboardOutlined />,
+    key: "categories",
+  },
+  {
+    label: "chat",
+    icon: <DashboardOutlined />,
+    key: "chat",
+  },
 ];
 const Sidebar = () => {
   const { token } = useToken();

@@ -1,6 +1,7 @@
 import { Layout as Wrapper } from "antd";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
+import Content from "./Content";
 
 const Layout = () => {
   return (
@@ -8,7 +9,7 @@ const Layout = () => {
       <Sidebar />
       <Wrapper style={{ padding: 28 }}>
         <Header />
-        Content
+        <Content />
       </Wrapper>
     </Wrapper>
   );
