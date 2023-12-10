@@ -1,6 +1,7 @@
 import { Layout } from "antd";
 import { useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import DashboardView from "../DashboardView";
 
 const { Content: Wrapper } = Layout;
 const Content = () => {
@@ -15,9 +16,9 @@ const Content = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper style={{ paddingTop: 32 }}>
       <Routes>
-        <Route path="dashboard" element={<div></div>} />
+        <Route path="Dashboard" element={<DashboardView />} />
       </Routes>
     </Wrapper>
   );
