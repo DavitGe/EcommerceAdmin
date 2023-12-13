@@ -15,8 +15,8 @@ const DashboardView = () => {
   return (
     <Wrapper>
       <MainStats />
-      <Row gutter={24}>
-        <Col span={12}>
+      <Row gutter={[24, 12]}>
+        <Col xs={24} sm={24} md={24} xl={12}>
           <ColumnPlots
             title="Revenue Overview"
             data={revenueOverviewData}
@@ -24,10 +24,10 @@ const DashboardView = () => {
             rowName2="Profit"
           />
         </Col>
-        <Col span={6}>
+        <Col xs={24} sm={24} md={12} xl={6}>
           <RoundChart title="Sales by Category" data={salesByCategoryData} />
         </Col>
-        <Col span={6}>
+        <Col xs={24} sm={24} md={12} xl={6}>
           <HalfRoundChart title="Website visitors" data={data} />
         </Col>
       </Row>
