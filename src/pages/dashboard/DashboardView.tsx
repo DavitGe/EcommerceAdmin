@@ -5,8 +5,13 @@ import { Col, Row } from "antd";
 import { revenueOverviewData } from "./context/revenueOverviewData";
 import RoundChart from "../../components/shared/statistics/RoundChart";
 import { salesByCategoryData } from "./context/salesByCategoryData";
+import HalfRoundChart from "../../components/shared/statistics/HalfRoundChart";
 
 const DashboardView = () => {
+  const data = [
+    { name: "New visitors", value: 650 },
+    { name: "Already registered", value: 300 },
+  ];
   return (
     <Wrapper>
       <MainStats />
@@ -23,7 +28,7 @@ const DashboardView = () => {
           <RoundChart title="Sales by Category" data={salesByCategoryData} />
         </Col>
         <Col span={6}>
-          <RoundChart title="Sales by Category" data={salesByCategoryData} />
+          <HalfRoundChart title="Website visitors" data={data} />
         </Col>
       </Row>
     </Wrapper>

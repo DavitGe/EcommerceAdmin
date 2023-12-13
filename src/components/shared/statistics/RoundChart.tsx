@@ -33,7 +33,7 @@ const RoundChart = ({ title, data }: PropsI) => {
     >
       <ResponsiveContainer width="100%" height="100%" minHeight={324}>
         <PieChart>
-          <Legend direction={3} />
+          <Legend />
           <Pie data={data} cx="50%" cy="50%" outerRadius={100} dataKey="value">
             {data.map((_, index) => (
               <Cell
