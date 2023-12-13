@@ -3,37 +3,37 @@ import { doubleColumnPlotInterface } from "../../../components/shared/statistics
 export const revenueOverviewData: doubleColumnPlotInterface[] = [
   {
     name: "MON",
-    Revenue: 4000,
-    Profit: 8932,
+    Revenue: 40,
+    Profit: 89,
   },
   {
     name: "TUE",
-    Revenue: 3000,
-    Profit: 1398,
+    Revenue: 30,
+    Profit: 13,
   },
   {
     name: "WED",
-    Revenue: 2000,
-    Profit: 9800,
+    Revenue: 20,
+    Profit: 98,
   },
   {
     name: "THU",
-    Revenue: 2780,
-    Profit: 3908,
+    Revenue: 27,
+    Profit: 39,
   },
   {
     name: "FRI",
-    Revenue: 9349,
-    Profit: 5492,
+    Revenue: 93,
+    Profit: 54,
   },
   {
     name: "SAT",
-    Revenue: 2390,
-    Profit: 3800,
+    Revenue: 23,
+    Profit: 38,
   },
   {
     name: "SUN",
-    Revenue: 6543,
-    Profit: 4300,
+    Revenue: 65,
+    Profit: 43,
   },
 ];

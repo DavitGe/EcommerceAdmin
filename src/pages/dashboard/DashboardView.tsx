@@ -23,7 +23,7 @@ const DashboardView = () => {
           <RoundChart title="Sales by Category" data={salesByCategoryData} />
         </Col>
         <Col span={6}>
-          {/* <ColumnPlots title="Revenue Overview" data={revenueOverviewData} /> */}
+          <RoundChart title="Sales by Category" data={salesByCategoryData} />
         </Col>
       </Row>
     </Wrapper>
