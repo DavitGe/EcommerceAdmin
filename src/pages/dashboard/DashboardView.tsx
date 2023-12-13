@@ -3,6 +3,8 @@ import styled from "styled-components";
 import ColumnPlots from "../../components/shared/statistics/DoubleColumnPlots";
 import { Col, Row } from "antd";
 import { revenueOverviewData } from "./context/revenueOverviewData";
+import RoundChart from "../../components/shared/statistics/RoundChart";
+import { salesByCategoryData } from "./context/salesByCategoryData";
 
 const DashboardView = () => {
   return (
@@ -10,7 +12,18 @@ const DashboardView = () => {
       <MainStats />
       <Row gutter={24}>
         <Col span={12}>
-          <ColumnPlots title="Revenue Overview" data={revenueOverviewData} />
+          <ColumnPlots
+            title="Revenue Overview"
+            data={revenueOverviewData}
+            rowName1="Revenue"
+            rowName2="Profit"
+          />
+        </Col>
+        <Col span={6}>
+          <RoundChart title="Sales by Category" data={salesByCategoryData} />
+        </Col>
+        <Col span={6}>
+          {/* <ColumnPlots title="Revenue Overview" data={revenueOverviewData} /> */}
         </Col>
       </Row>
     </Wrapper>

@@ -4,25 +4,26 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 import { theme } from "antd";
 
 export interface doubleColumnPlotInterface {
   name: string;
-  uv: number;
-  pv: number;
+  [key: string]: number | string;
 }
 
 interface PropsI {
   title?: string;
   data: doubleColumnPlotInterface[];
+  rowName1: string;
+  rowName2: string;
 }
 
-const ColumnPlots = ({ title, data }: PropsI) => {
+const ColumnPlots = ({ title, data, rowName1, rowName2 }: PropsI) => {
   const { token } = theme.useToken();
 
   return (
@@ -33,26 +34,23 @@ const ColumnPlots = ({ title, data }: PropsI) => {
         border: "none",
       }}
     >
-      <ResponsiveContainer height={324}>
+      <ResponsiveContainer height={300}>
         <BarChart width={700} height={300} data={data} barGap={-12}>
           <XAxis dataKey="name" />
-          <YAxis
-            yAxisId="left"
-            orientation="left"
-            stroke={token.colorPrimaryActive}
-          />
+          <YAxis yAxisId="left" stroke={token.colorPrimaryActive} />
           <Tooltip />
           <Legend />
+          <CartesianGrid strokeDasharray="1 3" />
           <Bar
             yAxisId="left"
-            dataKey="pv"
+            dataKey={rowName1}
             fill={token.colorPrimaryActive}
             radius={[8, 8, 0, 0]}
             maxBarSize={24}
           />
           <Bar
             yAxisId="left"
-            dataKey="uv"
+            dataKey={rowName2}
             fill={token.colorPrimaryHover}
             radius={[8, 8, 0, 0]}
             maxBarSize={24}
