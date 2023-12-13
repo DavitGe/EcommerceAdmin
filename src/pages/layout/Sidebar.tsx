@@ -3,6 +3,7 @@ import { Layout, theme, Typography, Menu } from "antd";
 import styled from "styled-components";
 import { sidebarData } from "./sidebar.data";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useSidebar } from "./context/SidebarProvider";
 
 const { Sider: Wrapper } = Layout;
 const { Title } = Typography;
@@ -13,6 +14,7 @@ const Sidebar = () => {
   const { token } = useToken();
   const location = useLocation();
   const currentPage = location.pathname.split("/").filter(Boolean).pop();
+  const { state } = useSidebar();
 
   function getPath(data: string[]) {
     return data.reverse().reduce((sum, value) => {
@@ -30,14 +32,18 @@ const Sidebar = () => {
         boxShadow: `-22px 10px 50px ${token.colorPrimary}`,
       }}
       defaultCollapsed={false}
+      collapsed={state.isOpen}
+      hidden={state.isOpen}
     >
       <LogoContainer>
         <HeatMapOutlined
           style={{ fontSize: token.fontSizeXL, color: token.colorPrimary }}
         />
-        <Title level={3} style={{ cursor: "pointer" }}>
-          Admink
-        </Title>
+        {!state.isOpen && (
+          <Title level={3} style={{ cursor: "pointer" }}>
+            Admink
+          </Title>
+        )}
       </LogoContainer>
       <Menu
         items={sidebarData}

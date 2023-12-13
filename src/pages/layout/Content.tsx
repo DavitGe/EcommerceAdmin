@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import { useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import DashboardView from "../DashboardView";
+import DashboardView from "../dashboard/DashboardView";
 
 const { Content: Wrapper } = Layout;
 const Content = () => {

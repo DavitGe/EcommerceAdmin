@@ -6,6 +6,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import styled from "styled-components";
+import { useSidebar } from "./context/SidebarProvider";
 
 const { Header: Wrapper } = Layout;
 const { useToken } = theme;
@@ -20,6 +21,7 @@ const headerStyle: React.CSSProperties = {
 
 const Header = () => {
   const { token } = useToken();
+  const { toggleSidebar } = useSidebar();
 
   return (
     <Wrapper style={headerStyle}>
@@ -27,6 +29,7 @@ const Header = () => {
         <MenuIcon
           hoverBgColor={token.colorBgTextHover}
           hoverColor={token.colorPrimaryTextHover}
+          onClick={toggleSidebar}
         >
           <MenuOutlined />
         </MenuIcon>

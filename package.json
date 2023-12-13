@@ -13,8 +13,10 @@
     "@ant-design/icons": "^5.2.6",
     "antd": "^5.12.1",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
+    "recharts": "^2.10.3",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {
