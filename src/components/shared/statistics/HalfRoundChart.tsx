@@ -23,7 +23,6 @@ const renderActiveShape = (props: any) => {
   const {
     cx,
     cy,
-    midAngle,
     innerRadius,
     outerRadius,
     startAngle,
@@ -111,7 +110,7 @@ const HalfRoundChart = ({ title, data }: PropsI) => {
             textAnchor="sss"
             onMouseEnter={onPieEnter}
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

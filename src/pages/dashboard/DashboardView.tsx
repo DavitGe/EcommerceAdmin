@@ -6,7 +6,6 @@ import { revenueOverviewData } from "./context/revenueOverviewData";
 import RoundChart from "../../components/shared/statistics/RoundChart";
 import { salesByCategoryData } from "./context/salesByCategoryData";
 import HalfRoundChart from "../../components/shared/statistics/HalfRoundChart";
-import AdProTable from "../../components/shared/tables/AdProTable";
 import DashboardTable from "../../components/dashboard/table/Dashboard.table";
 
 const DashboardView = () => {
