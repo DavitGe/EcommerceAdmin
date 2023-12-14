@@ -53,7 +53,6 @@ const Header = () => {
         <Breadcrumb items={[{ title: "Dashboards" }, { title: "Ecommerce" }]} />
       </Flex>
       <Flex gap={24} align="center" justify="end" style={{ flex: 1 }}>
-        <Switch onChange={changeTheme} />
         <Input
           placeholder="Search"
           prefix={<SearchOutlined />}
