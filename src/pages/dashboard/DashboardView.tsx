@@ -7,6 +7,7 @@ import RoundChart from "../../components/shared/statistics/RoundChart";
 import { salesByCategoryData } from "./context/salesByCategoryData";
 import HalfRoundChart from "../../components/shared/statistics/HalfRoundChart";
 import DashboardTable from "../../components/dashboard/table/Dashboard.table";
+import DashboardList from "../../components/dashboard/list/Dashboard.list";
 
 const DashboardView = () => {
   const data = [
@@ -32,8 +33,9 @@ const DashboardView = () => {
           <HalfRoundChart title="Website visitors" data={data} />
         </Col>
       </Row>
-      <Row gutter={24}>
+      <Row gutter={[24, 12]}>
         <DashboardTable />
+        <DashboardList />
       </Row>
     </Wrapper>
   );
