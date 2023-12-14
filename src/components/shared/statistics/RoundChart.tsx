@@ -34,7 +34,15 @@ const RoundChart = ({ title, data }: PropsI) => {
       <ResponsiveContainer width="100%" height="100%" minHeight={324}>
         <PieChart>
           <Legend />
-          <Pie data={data} cx="50%" cy="50%" outerRadius={100} dataKey="value">
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            dataKey="value"
+            floodColor={"#000"}
+            stroke="none"
+          >
             {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}

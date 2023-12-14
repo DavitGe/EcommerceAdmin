@@ -27,10 +27,10 @@ const DashboardView = () => {
           />
         </Col>
         <Col xs={24} sm={24} md={12} xl={6}>
-          <RoundChart title="Sales by Category" data={salesByCategoryData} />
+          <HalfRoundChart title="Website visitors" data={data} />
         </Col>
         <Col xs={24} sm={24} md={12} xl={6}>
-          <HalfRoundChart title="Website visitors" data={data} />
+          <RoundChart title="Sales by Category" data={salesByCategoryData} />
         </Col>
       </Row>
       <Row gutter={[24, 12]}>

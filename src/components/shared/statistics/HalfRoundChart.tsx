@@ -109,6 +109,7 @@ const HalfRoundChart = ({ title, data }: PropsI) => {
             dataKey="value"
             textAnchor="sss"
             onMouseEnter={onPieEnter}
+            stroke="none"
           >
             {data.map((_, index) => (
               <Cell

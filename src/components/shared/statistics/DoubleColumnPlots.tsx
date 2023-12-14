@@ -38,9 +38,17 @@ const ColumnPlots = ({ title, data, rowName1, rowName2 }: PropsI) => {
         <BarChart width={700} height={300} data={data} barGap={-12}>
           <XAxis dataKey="name" />
           <YAxis yAxisId="left" stroke={token.colorPrimaryActive} />
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: token.colorBgBase,
+              border: "none",
+            }}
+            cursorStyle={{
+              backgroundColor: token.colorBgBase,
+            }}
+          />
           <Legend />
-          <CartesianGrid strokeDasharray="1 3" />
+          <CartesianGrid strokeDasharray="1 3" opacity={0.5} />
           <Bar
             yAxisId="left"
             dataKey={rowName1}

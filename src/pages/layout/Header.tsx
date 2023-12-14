@@ -1,4 +1,14 @@
-import { Avatar, Breadcrumb, Flex, Input, Layout, theme } from "antd";
+import {
+  Avatar,
+  Breadcrumb,
+  Flex,
+  Input,
+  Layout,
+  Popover,
+  Space,
+  Switch,
+  theme,
+} from "antd";
 import {
   MenuOutlined,
   SearchOutlined,
@@ -7,6 +17,8 @@ import {
 } from "@ant-design/icons";
 import styled from "styled-components";
 import { useSidebar } from "./context/SidebarProvider";
+import { useDarkMode } from "../../Global.Context";
+import SelectorList from "../../components/shared/dataEntry/SelectorList";
 
 const { Header: Wrapper } = Layout;
 const { useToken } = theme;
@@ -22,6 +34,11 @@ const headerStyle: React.CSSProperties = {
 const Header = () => {
   const { token } = useToken();
   const { toggleSidebar } = useSidebar();
+  const { toggleDarkMode } = useDarkMode();
+
+  const changeTheme = (value: boolean) => {
+    toggleDarkMode(value);
+  };
 
   return (
     <Wrapper style={headerStyle}>
@@ -36,14 +53,30 @@ const Header = () => {
         <Breadcrumb items={[{ title: "Dashboards" }, { title: "Ecommerce" }]} />
       </Flex>
       <Flex gap={24} align="center" justify="end" style={{ flex: 1 }}>
+        <Switch onChange={changeTheme} />
         <Input
           placeholder="Search"
           prefix={<SearchOutlined />}
           style={{ borderRadius: token.borderRadiusLG, width: 190 }}
         />
-        <IconWrapper hoverBgColor={token.colorBgTextHover}>
-          <SettingOutlined />
-        </IconWrapper>
+        <Popover
+          trigger={"click"}
+          content={
+            <SelectorList
+              elements={[
+                <Space>
+                  <span>Dark Mode</span>
+                  <Switch onChange={changeTheme} />
+                </Space>,
+              ]}
+              withoutHover
+            />
+          }
+        >
+          <IconWrapper hoverBgColor={token.colorBgTextHover}>
+            <SettingOutlined />
+          </IconWrapper>
+        </Popover>
         <Avatar icon={<UserOutlined />} />
       </Flex>
     </Wrapper>
