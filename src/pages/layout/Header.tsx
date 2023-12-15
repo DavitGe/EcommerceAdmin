@@ -19,6 +19,7 @@ import styled from "styled-components";
 import { useSidebar } from "./context/SidebarProvider";
 import { useDarkMode } from "../../Global.Context";
 import SelectorList from "../../components/shared/dataEntry/SelectorList";
+import { useLocation } from "react-router-dom";
 
 const { Header: Wrapper } = Layout;
 const { useToken } = theme;
@@ -35,6 +36,7 @@ const Header = () => {
   const { token } = useToken();
   const { toggleSidebar } = useSidebar();
   const { toggleDarkMode } = useDarkMode();
+  let location = useLocation();
 
   const changeTheme = (value: boolean) => {
     toggleDarkMode(value);
@@ -50,7 +52,13 @@ const Header = () => {
         >
           <MenuOutlined />
         </MenuIcon>
-        <Breadcrumb items={[{ title: "Dashboards" }, { title: "Ecommerce" }]} />
+        <Breadcrumb
+          items={location.pathname.split("/")?.map((el) => {
+            return {
+              title: el,
+            };
+          })}
+        />
       </Flex>
       <Flex gap={24} align="center" justify="end" style={{ flex: 1 }}>
         <Input

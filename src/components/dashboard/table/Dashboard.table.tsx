@@ -1,5 +1,5 @@
 import { Button, Card, Col, Space, Typography } from "antd";
-import AdProTable from "../../shared/tables/AdProTable";
+import AdProTable from "../../shared/dataEntry/AdProTable";
 import { recentSalesData } from "./table.data";
 import { recentSalesColumns } from "./table.columns";
 import { ProFormText } from "@ant-design/pro-components";
