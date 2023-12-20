@@ -1,8 +1,16 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { ProColumns } from "@ant-design/pro-components";
-import { Avatar, Space, Tag, Typography } from "antd";
+import { Avatar, Input, Space, Tag, Typography } from "antd";
 
-export const usersTableColumns: ProColumns<any, any>[] = [
+export interface UsersDataType {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  id: number;
+}
+
+export const usersTableColumns: ProColumns<UsersDataType, "text">[] = [
   {
     title: "Name",
     dataIndex: "name",
@@ -39,15 +47,33 @@ export const usersTableColumns: ProColumns<any, any>[] = [
     title: "Address",
     dataIndex: "address",
     sorter: (a, b) => a.address.localeCompare(b.address),
+    fieldProps: (form, { rowKey, rowIndex }) => {
+      if (form.getFieldValue([rowKey || "", "title"]) === "不好玩") {
+        return {
+          disabled: true,
+        };
+      }
+      if (rowIndex > 9) {
+        return {
+          disabled: true,
+        };
+      }
+      return {};
+    },
   },
   {
     title: "Actions",
-    render: () => (
+    valueType: "option",
+    render: (_, record, i, action) => (
       <Space>
         <Tag
           color="warning"
           icon={<EditOutlined />}
           style={{ cursor: "pointer", fontWeight: 500 }}
+          key="editable"
+          onClick={() => {
+            action?.startEditable?.(record.id);
+          }}
         >
           Edit
         </Tag>

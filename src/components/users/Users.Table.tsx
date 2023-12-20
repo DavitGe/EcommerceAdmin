@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import AdProTable from "../shared/dataEntry/AdProTable";
-import { Button, Card, Space, Typography } from "antd";
+import { Button, Card, Form, Space, Typography } from "antd";
 import { DownloadOutlined, SearchOutlined } from "@ant-design/icons";
-import { ProFormText } from "@ant-design/pro-components";
+import { EditableProTable, ProFormText } from "@ant-design/pro-components";
 import { exportToExcel } from "../../utils/exportToExcel";
-import { usersTableColumns } from "./UsersTable.columns";
+import { UsersDataType, usersTableColumns } from "./UsersTable.columns";
 import { usersTableData } from "./UsersTable.data";
 
 const UsersTable = () => {
   const [search, setSearch] = useState<string>();
+  const [dataSource, setDataSource] = useState<UsersDataType[]>(usersTableData);
+  const [editableKeys, setEditableRowKeys] = useState<React.Key[]>([""]);
+  const [form] = Form.useForm();
 
   function searchHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
@@ -24,7 +26,13 @@ const UsersTable = () => {
 
   return (
     <Card bordered={false}>
-      <Space style={{ width: "100%", justifyContent: "space-between" }}>
+      <Space
+        style={{
+          width: "100%",
+          justifyContent: "space-between",
+          marginBottom: 12,
+        }}
+      >
         <Typography.Title level={5} style={{ margin: 0 }}>
           List of Users
         </Typography.Title>
@@ -58,11 +66,30 @@ const UsersTable = () => {
           </Button>
         </Space>
       </Space>
-      <AdProTable
+      <EditableProTable
         columns={usersTableColumns}
-        dataSource={usersTableData.filter((el) =>
-          el.name.includes(search ?? "")
+        request={async () => ({
+          data: usersTableData,
+          total: usersTableData.length,
+          success: true,
+        })}
+        value={dataSource.filter((el) =>
+          el.name.toLocaleLowerCase().includes(search?.toLowerCase() ?? "")
         )}
+        recordCreatorProps={false}
+        pagination={{
+          pageSize: 5,
+        }}
+        editable={{
+          form,
+          type: "multiple",
+          editableKeys,
+          onSave: async (rowKey, data, row) => {
+            //TODO: Back service
+          },
+          onChange: setEditableRowKeys,
+        }}
+        rowKey={"id"}
       />
     </Card>
   );

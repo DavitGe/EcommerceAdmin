@@ -5,7 +5,6 @@ import { theme } from "antd";
 import { useDarkMode } from "./Global.Context";
 
 function App() {
-  // const { darkAlgorithm, compactAlgorithm } = theme;
   const { isDarkMode } = useDarkMode();
 
   return (

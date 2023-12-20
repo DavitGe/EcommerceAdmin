@@ -35,7 +35,7 @@ export const recentSalesColumns: ProColumns<any, any>[] = [
         {inStock > 10 ? "INSTOCK" : inStock === 0 ? "OUTOFSTOCK" : "LOWSTOCK"}
       </Tag>
     ),
-    width: "25%",
     sorter: (a, b) => a.inStock - b.inStock,
+    width: "25%",
   },
 ];
