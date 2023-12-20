@@ -1,6 +1,6 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { ProColumns } from "@ant-design/pro-components";
-import { Avatar, Input, Space, Tag, Typography } from "antd";
+import { Avatar, Space, Tag, Typography } from "antd";
 
 export interface UsersDataType {
   name: string;
@@ -47,24 +47,11 @@ export const usersTableColumns: ProColumns<UsersDataType, "text">[] = [
     title: "Address",
     dataIndex: "address",
     sorter: (a, b) => a.address.localeCompare(b.address),
-    fieldProps: (form, { rowKey, rowIndex }) => {
-      if (form.getFieldValue([rowKey || "", "title"]) === "不好玩") {
-        return {
-          disabled: true,
-        };
-      }
-      if (rowIndex > 9) {
-        return {
-          disabled: true,
-        };
-      }
-      return {};
-    },
   },
   {
     title: "Actions",
     valueType: "option",
-    render: (_, record, i, action) => (
+    render: (_, record, __, action) => (
       <Space>
         <Tag
           color="warning"

@@ -8,7 +8,7 @@ import { usersTableData } from "./UsersTable.data";
 
 const UsersTable = () => {
   const [search, setSearch] = useState<string>();
-  const [dataSource, setDataSource] = useState<UsersDataType[]>(usersTableData);
+  const [dataSource] = useState<UsersDataType[]>(usersTableData);
   const [editableKeys, setEditableRowKeys] = useState<React.Key[]>([""]);
   const [form] = Form.useForm();
 
@@ -84,7 +84,7 @@ const UsersTable = () => {
           form,
           type: "multiple",
           editableKeys,
-          onSave: async (rowKey, data, row) => {
+          onSave: async () => {
             //TODO: Back service
           },
           onChange: setEditableRowKeys,
