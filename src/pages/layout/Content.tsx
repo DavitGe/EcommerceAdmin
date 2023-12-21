@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import DashboardView from "../dashboard/DashboardView";
 import UsersView from "../users/UsersView";
+import ProductsView from "../products/ProductsView";
 
 const { Content: Wrapper } = Layout;
 const Content = () => {
@@ -21,6 +22,7 @@ const Content = () => {
       <Routes>
         <Route path="Dashboard" element={<DashboardView />} />
         <Route path="Users" element={<UsersView />} />
+        <Route path="Products" element={<ProductsView />} />
       </Routes>
     </Wrapper>
   );

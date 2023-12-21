@@ -25,7 +25,7 @@ export const sidebarData: MenuProps["items"] = [
     label: "Users",
   },
   {
-    key: "products",
+    key: "Products",
     icon: <SlidersOutlined />,
     label: "Products",
   },
