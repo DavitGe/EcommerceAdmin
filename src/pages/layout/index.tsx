@@ -9,7 +9,14 @@ const Layout = () => {
     <Wrapper hasSider style={{ minHeight: "100vh" }}>
       <SidebarProvider>
         <Sidebar />
-        <Wrapper style={{ padding: 28 }}>
+        <Wrapper
+          style={{
+            padding: 28,
+            paddingTop: "2vh",
+            maxHeight: "100vh",
+            overflow: "scroll",
+          }}
+        >
           <Header />
           <Content />
         </Wrapper>

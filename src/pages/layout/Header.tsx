@@ -18,7 +18,7 @@ import {
 import styled from "styled-components";
 import { useSidebar } from "./context/SidebarProvider";
 import { useDarkMode } from "../../Global.Context";
-import SelectorList from "../../components/shared/dataEntry/SelectorList";
+import SelectorList from "../../components/shared/dataDisplay/SelectorList";
 import { useLocation } from "react-router-dom";
 
 const { Header: Wrapper } = Layout;
@@ -27,7 +27,8 @@ const { useToken } = theme;
 const headerStyle: React.CSSProperties = {
   backgroundColor: "transparent",
   padding: 0,
-  height: 42,
+  marginBottom: "2vh",
+  height: "5vh",
   display: "flex",
   justifyContent: "space-between",
 };

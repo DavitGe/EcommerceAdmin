@@ -5,6 +5,7 @@ import { EditableProTable, ProFormText } from "@ant-design/pro-components";
 import { exportToExcel } from "../../utils/exportToExcel";
 import { UsersDataType, usersTableColumns } from "./UsersTable.columns";
 import { usersTableData } from "./UsersTable.data";
+import ExportBtn from "../shared/export/ExportBtn";
 
 const UsersTable = () => {
   const [search, setSearch] = useState<string>();
@@ -50,20 +51,7 @@ const UsersTable = () => {
               onChange: searchHandler,
             }}
           />
-          <Button
-            type="primary"
-            style={{
-              height: 40,
-              width: 40,
-              borderRadius: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            onClick={exportExcel}
-          >
-            <DownloadOutlined style={{ fontSize: 16 }} />
-          </Button>
+          <ExportBtn exportExcel={exportExcel} />
         </Space>
       </Space>
       <EditableProTable

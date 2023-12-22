@@ -15,12 +15,9 @@ const AdProTable = (props: ProTableProps<any, Params, ValueType>) => {
           ...props?.form?.style,
         },
       }}
-      pagination={{
-        pageSize: 5,
-        ...props?.pagination,
-      }}
       scroll={{
         x: "max-width",
+        y: "70vh",
       }}
     />
   );

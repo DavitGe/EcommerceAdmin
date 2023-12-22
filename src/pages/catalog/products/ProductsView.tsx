@@ -11,7 +11,10 @@ const ProductsView = () => {
       tableProps={{
         columns: productColumns,
         dataSource: productsData,
+        pagination: false,
       }}
+      desc="Streamline product management with our intuitive admin panel."
+      // filters={{}}
     />
   );
 };

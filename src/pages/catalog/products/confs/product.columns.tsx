@@ -1,16 +1,19 @@
 import { ProColumns } from "@ant-design/pro-components";
 import { ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { productInterface } from "../context/products.data";
-import { Avatar, Flex, Rate, Space, Tag, Typography } from "antd";
+import { Avatar, Col, Flex, Rate, Space, Tag, Typography } from "antd";
+import { filtersEnum } from "../../../../components/shared/refferenceWrapper/filtersEnum";
+
+const SearchEl = filtersEnum.search;
 
 export const productColumns: ProColumns<productInterface, ValueType>[] = [
   {
-    title: "ID",
-    dataIndex: "id",
-    sorter: (a, b) => (a?.id ? a.id - (b?.id ?? 0) : -1),
-  },
-  {
-    title: "Name",
+    title: (
+      <Col>
+        <span>Name</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
     dataIndex: "name",
     sorter: (a, b) => a.name?.localeCompare(b.name ?? "") ?? 0,
     render: (_, row, index) => {
@@ -35,26 +38,50 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
         </Space>
       );
     },
+    width: 312,
   },
   {
-    title: "Category",
+    title: (
+      <Col>
+        <span>Category</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
     dataIndex: "category",
     sorter: (a, b) => a.category?.localeCompare(b.category ?? "") ?? 0,
+    width: 124,
   },
   {
-    title: "Price",
+    title: (
+      <Col>
+        <span>Price</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
     dataIndex: "price",
     renderText: (text) => `$${text.toFixed(2)}`,
     sorter: (a, b) => (a?.price ? a.price - (b?.price ?? 0) : -1),
+    width: 64,
   },
   {
-    title: "Sale",
+    title: (
+      <Col>
+        <span>Sale</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
     dataIndex: "sale",
     renderText: (text) => `-${text.toFixed(2)}%`,
     sorter: (a, b) => (a?.sale ? a.sale - (b?.sale ?? 0) : -1),
+    width: 82,
   },
   {
-    title: "Status",
+    title: (
+      <Col>
+        <span>Status</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
     dataIndex: "status",
     render: (_, { status }) => (
       <>
@@ -72,6 +99,7 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
       </>
     ),
     sorter: (a, b) => (a?.status ? a.status - (b?.status ?? 0) : -1),
+    width: 124,
     //TODO: Should be changed to Quantity
   },
 ];

@@ -19,7 +19,7 @@ const Content = () => {
   }, []);
 
   return (
-    <Wrapper style={{ paddingTop: 32 }}>
+    <Wrapper>
       <Routes>
         <Route path="Dashboard" element={<DashboardView />} />
         <Route path="Staff" element={<UsersView />} />
