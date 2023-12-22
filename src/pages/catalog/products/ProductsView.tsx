@@ -1,4 +1,4 @@
-import RefferenceWrapper from "../../components/shared/refferenceWrapper/RefferenceWrapper";
+import RefferenceWrapper from "../../../components/shared/refferenceWrapper/RefferenceWrapper";
 import { SlidersOutlined } from "@ant-design/icons";
 import { productColumns } from "./confs/product.columns";
 import { productsData } from "./context/products.data";

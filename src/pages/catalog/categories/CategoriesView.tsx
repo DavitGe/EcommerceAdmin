@@ -1,4 +1,4 @@
-import CategoriesTree from "../../components/categories/tree/CategoriesTree";
+import CategoriesTree from "../../../components/categories/tree/CategoriesTree";
 
 const CategoriesView = () => {
   return <CategoriesTree />;

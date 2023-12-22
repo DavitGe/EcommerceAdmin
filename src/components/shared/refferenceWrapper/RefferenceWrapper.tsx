@@ -1,5 +1,5 @@
 import { Card, CardProps, Flex, Typography, theme } from "antd";
-import React from "react";
+import React, { Children } from "react";
 import styled from "styled-components";
 import AdProTable from "../dataEntry/AdProTable";
 import { ProTableProps } from "@ant-design/pro-components";
@@ -10,7 +10,8 @@ interface PropsI extends CardProps {
   title: string;
   icon: React.ReactNode;
   desc?: string;
-  tableProps: ProTableProps<any, Params, ValueType>;
+  tableProps?: ProTableProps<any, Params, ValueType>;
+  children?: React.ReactNode;
 }
 
 const RefferenceWrapper = (props: PropsI) => {
@@ -27,7 +28,11 @@ const RefferenceWrapper = (props: PropsI) => {
       <p style={{ opacity: 0.6, margin: 0 }}>
         {props?.desc ?? "For editing doubleclick the row"}
       </p>
-      <AdProTable {...props.tableProps} />
+      {props?.tableProps ? (
+        <AdProTable {...props.tableProps} />
+      ) : (
+        props?.children
+      )}
     </Card>
   );
 };

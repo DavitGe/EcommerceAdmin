@@ -15,25 +15,26 @@ export const sidebarData: MenuProps["items"] = [
     label: "Dashboard",
   },
   {
+    key: "Catalog",
+    icon: <SlidersOutlined />,
+    label: "Catalog",
+    children: [
+      { key: "Categories", label: "Categories" },
+      {
+        key: "Products",
+        label: "Products",
+      },
+    ],
+  },
+  {
     key: "Annoucments",
     icon: <NotificationOutlined />,
     label: "Annoucments",
   },
   {
-    key: "Users",
+    key: "Staff",
     icon: <UserOutlined />,
-    label: "Users",
-  },
-  {
-    key: "Products",
-    icon: <SlidersOutlined />,
-    label: "Products",
-  },
-  {
-    key: "References",
-    icon: <SettingOutlined />,
-    label: "References",
-    children: [{ key: "Categories", label: "Categories" }],
+    label: "Staff",
   },
   {
     key: "Reports",
