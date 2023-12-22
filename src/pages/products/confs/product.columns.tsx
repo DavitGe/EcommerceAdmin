@@ -7,7 +7,7 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
   {
     title: "ID",
     dataIndex: "id",
-    sorter: (a, b) => (a?.id ? a.id - (b?.id ?? 0) : 0),
+    sorter: (a, b) => (a?.id ? a.id - (b?.id ?? 0) : -1),
   },
   {
     title: "Name",
@@ -16,7 +16,11 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
     render: (_, row, index) => {
       return (
         <Space align="start">
-          <Avatar shape="square" size={36} />
+          <Avatar
+            shape="square"
+            size={36}
+            src={`https://xsgames.co/randomusers/avatar.php?g=pixel&key=${index}`}
+          />
           <Flex gap={0} style={{ flexDirection: "column", marginTop: "-2px" }}>
             <Typography.Title level={5} style={{ margin: 0 }}>
               {row?.name}
@@ -41,13 +45,13 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
     title: "Price",
     dataIndex: "price",
     renderText: (text) => `$${text.toFixed(2)}`,
-    sorter: (a, b) => (a?.price ? a.price - (b?.price ?? 0) : 0),
+    sorter: (a, b) => (a?.price ? a.price - (b?.price ?? 0) : -1),
   },
   {
     title: "Sale",
     dataIndex: "sale",
     renderText: (text) => `-${text.toFixed(2)}%`,
-    sorter: (a, b) => (a?.sale ? a.sale - (b?.sale ?? 0) : 0),
+    sorter: (a, b) => (a?.sale ? a.sale - (b?.sale ?? 0) : -1),
   },
   {
     title: "Status",
@@ -67,6 +71,7 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
         )}
       </>
     ),
+    sorter: (a, b) => (a?.status ? a.status - (b?.status ?? 0) : -1),
     //TODO: Should be changed to Quantity
   },
 ];

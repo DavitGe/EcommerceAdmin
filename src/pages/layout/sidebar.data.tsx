@@ -33,7 +33,7 @@ export const sidebarData: MenuProps["items"] = [
     key: "References",
     icon: <SettingOutlined />,
     label: "References",
-    children: [{ key: "categories", label: "Categories" }],
+    children: [{ key: "Categories", label: "Categories" }],
   },
   {
     key: "Reports",
