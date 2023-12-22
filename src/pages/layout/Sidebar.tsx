@@ -47,6 +47,7 @@ const Sidebar = () => {
       </LogoContainer>
       <Menu
         items={sidebarData}
+        mode="inline"
         defaultSelectedKeys={[currentPage || "Dashboard"]}
         onSelect={(props) => {
           navigate(getPath(props.keyPath));
