@@ -3,7 +3,6 @@ import {
   PieChartOutlined,
   NotificationOutlined,
   SlidersOutlined,
-  SettingOutlined,
   HddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -19,11 +18,13 @@ export const sidebarData: MenuProps["items"] = [
     icon: <SlidersOutlined />,
     label: "Catalog",
     children: [
-      { key: "Categories", label: "Categories" },
       {
         key: "Products",
         label: "Products",
       },
+      { key: "Categories", label: "Categories" },
+      { key: "Attributes", label: "Attributes" },
+      { key: "Coupons", label: "Coupons" },
     ],
   },
   {
