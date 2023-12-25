@@ -5,6 +5,7 @@ import {
   SlidersOutlined,
   HddOutlined,
   UserOutlined,
+  CompassOutlined,
 } from "@ant-design/icons";
 
 export const sidebarData: MenuProps["items"] = [
@@ -26,6 +27,11 @@ export const sidebarData: MenuProps["items"] = [
       { key: "Attributes", label: "Attributes" },
       { key: "Coupons", label: "Coupons" },
     ],
+  },
+  {
+    key: "Orders",
+    icon: <CompassOutlined />,
+    label: "Orders",
   },
   {
     key: "Annoucments",

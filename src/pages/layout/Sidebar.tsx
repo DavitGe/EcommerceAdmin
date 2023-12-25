@@ -13,13 +13,17 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const { token } = useToken();
   const location = useLocation();
-  const currentPage = location.pathname.split("/").filter(Boolean).pop();
   const { state } = useSidebar();
+  const currentPage = location.pathname.split("/").filter(Boolean).pop();
 
   function getPath(data: string[]) {
     return data.reverse().reduce((sum, value) => {
       return sum + "/" + value;
     });
+  }
+
+  function navigateHome() {
+    navigate("/Dashboard");
   }
 
   return (
@@ -35,7 +39,7 @@ const Sidebar = () => {
       collapsed={state.isOpen}
       hidden={state.isOpen}
     >
-      <LogoContainer>
+      <LogoContainer onClick={navigateHome}>
         <HeatMapOutlined
           style={{ fontSize: token.fontSizeXL, color: token.colorPrimary }}
         />

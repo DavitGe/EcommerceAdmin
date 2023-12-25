@@ -1,4 +1,4 @@
-import { Avatar, Col, Flex, Rate, Space, Typography } from "antd";
+import { Col } from "antd";
 import { filtersEnum } from "../../../../components/shared/refferenceWrapper/filtersEnum";
 import { ICategory } from "../CategoriesView";
 import { ProColumns } from "@ant-design/pro-components";
