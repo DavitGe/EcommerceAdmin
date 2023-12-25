@@ -5,6 +5,8 @@ export const usersTableData = [
     email: "Joe.Brown40@gmail.com",
     phone: "(712) 243-3511",
     address: "Suite 809 195 Angelica Junction, Stehrville, CO 33734",
+    role: "Administrator",
+    status: true,
   },
   {
     id: 1041,
@@ -12,6 +14,8 @@ export const usersTableData = [
     email: "Jane.Smith41@gmail.com",
     phone: "(513) 555-1234",
     address: "Apt 215 123 Main Street, Cityville, CA 90210",
+    role: "CEO",
+    status: true,
   },
   {
     id: 1042,
@@ -19,6 +23,8 @@ export const usersTableData = [
     email: "John.Doe42@gmail.com",
     phone: "(614) 987-6543",
     address: "Unit 301 456 Elm Street, Townsville, NY 56789",
+    role: "Manager",
+    status: true,
   },
   {
     id: 1043,
@@ -26,6 +32,8 @@ export const usersTableData = [
     email: "Alice.Johnson43@gmail.com",
     phone: "(720) 555-9876",
     address: "123 Pine Lane, Villagetown, TX 76543",
+    role: "Driver",
+    status: true,
   },
   {
     id: 1044,
@@ -33,6 +41,8 @@ export const usersTableData = [
     email: "Robert.Williams44@gmail.com",
     phone: "(818) 333-8765",
     address: "Suite 405 789 Oak Avenue, Hamletville, FL 54321",
+    role: "Security Guard",
+    status: false,
   },
   {
     id: 1045,
@@ -40,6 +50,8 @@ export const usersTableData = [
     email: "Emily.Davis45@gmail.com",
     phone: "(925) 222-5555",
     address: "Unit 512 456 Birch Street, Grovetown, AZ 87654",
+    role: "Accountant",
+    status: true,
   },
   {
     id: 1046,
@@ -47,6 +59,8 @@ export const usersTableData = [
     email: "Michael.Miller46@gmail.com",
     phone: "(305) 444-7890",
     address: "Apt 102 789 Maple Drive, Woodville, GA 34567",
+    role: "Security Guard",
+    status: false,
   },
   {
     id: 1047,
@@ -54,6 +68,8 @@ export const usersTableData = [
     email: "Sophia.Wilson47@gmail.com",
     phone: "(415) 666-1111",
     address: "Suite 601 987 Cedar Road, Hilltop, WA 12345",
+    role: "Operator",
+    status: true,
   },
   {
     id: 1048,
@@ -61,6 +77,8 @@ export const usersTableData = [
     email: "Daniel.Taylor48@gmail.com",
     phone: "(210) 777-2222",
     address: "Unit 208 234 Spruce Avenue, Lakeside, MI 67890",
+    role: "Driver",
+    status: true,
   },
   {
     id: 1049,
@@ -68,6 +86,8 @@ export const usersTableData = [
     email: "Olivia.Brown49@gmail.com",
     phone: "(612) 888-3333",
     address: "Apt 304 567 Pine Street, Riverside, IL 45678",
+    role: "Driver",
+    status: false,
   },
   {
     id: 1050,
@@ -75,6 +95,8 @@ export const usersTableData = [
     email: "Ethan.Harris50@gmail.com",
     phone: "(703) 999-4444",
     address: "Suite 701 876 Oak Lane, Mountainview, NV 98765",
+    role: "Lawyer",
+    status: true,
   },
   {
     id: 1051,
@@ -82,5 +104,7 @@ export const usersTableData = [
     email: "Ava.Martin51@gmail.com",
     phone: "(408) 111-5555",
     address: "Unit 803 345 Elm Road, Valleytown, OR 23456",
+    role: "CEO",
+    status: true,
   },
 ];

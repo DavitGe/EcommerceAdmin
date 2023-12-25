@@ -10,6 +10,8 @@ export interface UsersDataType {
   phone: string;
   address: string;
   id: number;
+  status?: boolean;
+  role?: string;
 }
 
 const SearchEl = filtersEnum.search;
@@ -71,6 +73,36 @@ export const usersTableColumns: ProColumns<UsersDataType, ValueType>[] = [
     ),
     dataIndex: "address",
     sorter: (a, b) => a.address.localeCompare(b.address),
+  },
+  {
+    title: (
+      <Col>
+        <span>Role</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
+    dataIndex: "role",
+    sorter: (a, b) => a.address.localeCompare(b.address),
+    render: (text) => <span style={{ fontWeight: 600 }}>{text}</span>,
+  },
+  {
+    title: (
+      <Col>
+        <span>Status</span>
+        <SearchEl fieldProps={{ size: "small" }} />
+      </Col>
+    ),
+    dataIndex: "status",
+    render: (_, row) => (
+      <Tag
+        color={row?.status ? "success" : "error"}
+        style={{
+          fontWeight: 600,
+        }}
+      >
+        {row?.status ? "ACTIVE" : "DEACTIVATED"}
+      </Tag>
+    ),
   },
   {
     title: (
