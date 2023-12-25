@@ -1,6 +1,7 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { ProColumns } from "@ant-design/pro-components";
 import { Avatar, Space, Tag, Typography } from "antd";
+import { ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 export interface UsersDataType {
   name: string;
@@ -10,7 +11,7 @@ export interface UsersDataType {
   id: number;
 }
 
-export const usersTableColumns: ProColumns<UsersDataType, "text">[] = [
+export const usersTableColumns: ProColumns<UsersDataType, ValueType>[] = [
   {
     title: "Name",
     dataIndex: "name",
