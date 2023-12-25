@@ -7,6 +7,7 @@ const AdProTable = (props: ProTableProps<any, Params, ValueType>) => {
     <ProTable
       toolBarRender={false}
       tooltip={false}
+      rowKey={"id"}
       {...props}
       form={{
         ...props?.form,

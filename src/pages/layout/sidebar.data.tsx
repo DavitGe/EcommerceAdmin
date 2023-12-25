@@ -6,6 +6,7 @@ import {
   HddOutlined,
   UserOutlined,
   CompassOutlined,
+  UsergroupAddOutlined,
 } from "@ant-design/icons";
 
 export const sidebarData: MenuProps["items"] = [
@@ -33,15 +34,20 @@ export const sidebarData: MenuProps["items"] = [
     icon: <CompassOutlined />,
     label: "Orders",
   },
-  {
-    key: "Annoucments",
-    icon: <NotificationOutlined />,
-    label: "Annoucments",
-  },
+  // {
+  //   key: "Annoucments",
+  //   icon: <NotificationOutlined />,
+  //   label: "Annoucments",
+  // },
   {
     key: "Staff",
     icon: <UserOutlined />,
     label: "Staff",
+  },
+  {
+    key: "Customers",
+    icon: <UsergroupAddOutlined />,
+    label: "Customers",
   },
   {
     key: "Reports",
