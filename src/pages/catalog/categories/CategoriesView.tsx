@@ -1,3 +1,4 @@
+import { PartitionOutlined } from "@ant-design/icons";
 import RefferenceWrapper from "../../../components/shared/refferenceWrapper/RefferenceWrapper";
 import { categoryColumns } from "./confs/categories.columns";
 import categoryData from "./confs/category.data";
@@ -14,7 +15,7 @@ const CategoriesView = () => {
   return (
     <RefferenceWrapper
       title="Categories"
-      icon={<></>}
+      icon={<PartitionOutlined />}
       tableProps={{
         columns: categoryColumns,
         dataSource: categoryData,
