@@ -3,6 +3,8 @@ import { ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { productInterface } from "../context/products.data";
 import { Avatar, Col, Flex, Rate, Space, Tag, Typography } from "antd";
 import { filtersEnum } from "../../../../components/shared/refferenceWrapper/filtersEnum";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons/lib/icons";
+import { useModal } from "../../../../utils/context/IsModalOpenContext";
 
 const SearchEl = filtersEnum.search;
 
@@ -101,5 +103,44 @@ export const productColumns: ProColumns<productInterface, ValueType>[] = [
     sorter: (a, b) => (a?.status ? a.status - (b?.status ?? 0) : -1),
     width: 124,
     //TODO: Should be changed to Quantity
+  },
+  {
+    title: (
+      <Col>
+        <span>Actions</span>
+        <div style={{ width: "100%", height: 24 }} />
+      </Col>
+    ),
+    valueType: "option",
+    render: () => {
+      const { setIsModalOpen } = useModal();
+
+      function openModal() {
+        setIsModalOpen(true);
+      }
+
+      return (
+        <Space>
+          <Tag
+            color="warning"
+            icon={<EditOutlined />}
+            style={{ cursor: "pointer", fontWeight: 500 }}
+            key="editable"
+            onClick={openModal}
+          >
+            Edit
+          </Tag>
+          <Tag
+            color="error"
+            icon={<DeleteOutlined />}
+            style={{ cursor: "pointer", fontWeight: 500 }}
+            key="delete"
+          >
+            Delete
+          </Tag>
+        </Space>
+      );
+    },
+    width: 124,
   },
 ];
