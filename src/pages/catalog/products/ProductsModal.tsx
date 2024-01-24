@@ -71,29 +71,75 @@ const ProductsModal = (props: IProps) => {
           <Flex justify={"space-between"} gap={24} style={{ width: "100%" }}>
             <ProFormDigit
               label="Price"
-              placeholder={""}
+              placeholder={"0"}
               addonAfter={
-                <PriceInputIcon color={token.colorSuccess}>
-                  <span>$</span>
-                </PriceInputIcon>
+                <>
+                  <PriceInputIcon color={token.colorSuccess}>
+                    <span>$</span>
+                  </PriceInputIcon>
+                  <CurrencyWrapper>
+                    <ProFormSelect
+                      width={72}
+                      initialValue={1}
+                      placeholder={""}
+                      options={[
+                        {
+                          label: "USD",
+                          value: 1,
+                        },
+                      ]}
+                      fieldProps={{
+                        size: "small",
+                        defaultValue: "USD",
+                        style: {
+                          height: 32,
+                        },
+                      }}
+                    />
+                  </CurrencyWrapper>
+                </>
               }
               fieldProps={{
                 style: {
                   paddingLeft: 24,
+                  paddingRight: 32,
                 },
               }}
             />
             <ProFormDigit
               label="Discount"
-              placeholder={""}
+              placeholder={"0"}
               addonAfter={
-                <PriceInputIcon color={token.colorError}>
-                  <span>$</span>
-                </PriceInputIcon>
+                <>
+                  <PriceInputIcon color={token.colorError}>
+                    <span>$</span>
+                  </PriceInputIcon>
+                  <CurrencyWrapper>
+                    <ProFormSelect
+                      width={72}
+                      initialValue={1}
+                      placeholder={""}
+                      options={[
+                        {
+                          label: "USD",
+                          value: 1,
+                        },
+                      ]}
+                      fieldProps={{
+                        size: "small",
+                        defaultValue: "USD",
+                        style: {
+                          height: 32,
+                        },
+                      }}
+                    />
+                  </CurrencyWrapper>
+                </>
               }
               fieldProps={{
                 style: {
                   paddingLeft: 24,
+                  paddingRight: 32,
                 },
               }}
             />
@@ -117,6 +163,13 @@ const PriceInputIcon = styled.div<{ color: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const CurrencyWrapper = styled.div`
+  position: absolute;
+
+  top: 0;
+  right: 0;
 `;
 
 export default ProductsModal;
