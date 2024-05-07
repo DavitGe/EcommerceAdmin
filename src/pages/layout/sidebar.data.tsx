@@ -1,12 +1,9 @@
 import { MenuProps } from "antd";
 import {
-  PieChartOutlined,
-  NotificationOutlined,
   SlidersOutlined,
   HddOutlined,
   UserOutlined,
   CompassOutlined,
-  UsergroupAddOutlined,
 } from "@ant-design/icons";
 
 export const sidebarData: MenuProps["items"] = [
