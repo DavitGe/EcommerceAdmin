@@ -44,14 +44,4 @@ export const sidebarData: MenuProps["items"] = [
     icon: <UserOutlined />,
     label: "Staff",
   },
-  {
-    key: "Customers",
-    icon: <UsergroupAddOutlined />,
-    label: "Customers",
-  },
-  {
-    key: "Reports",
-    icon: <PieChartOutlined />,
-    label: "Reports",
-  },
 ];
