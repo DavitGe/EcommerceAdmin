@@ -31,11 +31,6 @@ export const sidebarData: MenuProps["items"] = [
     icon: <CompassOutlined />,
     label: "Orders",
   },
-  // {
-  //   key: "Annoucments",
-  //   icon: <NotificationOutlined />,
-  //   label: "Annoucments",
-  // },
   {
     key: "Staff",
     icon: <UserOutlined />,
